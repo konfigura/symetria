@@ -1,3 +1,15 @@
-body {
-  background-color: aqua;
+.wrapper {
+  display: grid;
+  grid-template-columns: [fullwidth-start] 1fr [content-start] 1392px [content-end] 1fr [fullwidth-end];
+}
+
+.grid-12-column {
+  display: grid;
+  grid-template-columns: repeat(12, 94px);
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+* {
+  grid-column: content;
 }

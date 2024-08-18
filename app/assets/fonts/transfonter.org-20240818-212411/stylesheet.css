@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'LibreCaslonDisplay-Regular';
+    src: url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.eot');
+    src: local('Libre Caslon Display Regular'), local('LibreCaslonDisplay-Regular'),
+        url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.woff2') format('woff2'),
+        url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.woff') format('woff'),
+        url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.ttf') format('truetype'),
+        url('assets/fonts/libre-caslon-display/LibreCaslonDisplay-Regular.svg#LibreCaslonDisplay-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
