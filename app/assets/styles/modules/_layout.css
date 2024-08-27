@@ -1,6 +1,10 @@
 .wrapper {
   display: grid;
   grid-template-columns: [fullwidth-start] 1fr [content-start] 1392px [content-end] 1fr [fullwidth-end];
+
+  * {
+    grid-column: content;
+  }
 }
 
 .grid-12-column {
@@ -10,6 +14,8 @@
   row-gap: 24px;
 }
 
-* {
-  grid-column: content;
+
+
+.fullwidth {
+  grid-column: fullwidth;
 }

@@ -1,0 +1,58 @@
+.homepage {
+  &__hero {
+    margin-top: 80px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__about {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &__textbox {
+      grid-column: 2 / 8;
+      grid-row: 1 / 1;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      &__h2 {
+        max-width: 566px;
+      }
+    }
+
+    &__picture {
+      grid-column: 7 / 11;
+      grid-row: 1 / 1;
+      position: relative;
+      z-index: 5;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+    }
+
+  }
+
+  &__services {
+    background-color: $lightGrey;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &__textbox {
+      grid-column: 3 / 11;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      text-align: center;
+    }
+  }
+
+}

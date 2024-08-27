@@ -6,7 +6,10 @@
 @import './base/_global.css';
 
 @import './modules/_layout.css';
+@import './modules/_sections.css';
 @import './modules/_buttons.css';
-@import './modules/_headings.css';
+@import './modules/_typography.css';
 @import './modules/_header.css';
 @import './modules/_footer.css';
+
+@import './pages/_homepage.css';
