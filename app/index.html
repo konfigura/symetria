@@ -16,14 +16,19 @@
             <li class="header__navigation__list-item">Kontakt</li>
           </ul>
         </nav>
-        <a><img src="assets/images/symetria-logotyp.svg" alt="Logotyp firmy Symetria Nieruchomości."></a>
-        <a><button class="button button--border">Sprzedaj swoją nieruchomość <img src="assets/icons/arrow-top-right.svg" alt="Ikonka strzałki sugerująca otwarcie linku."></button></a>
+        <a href="#" class="header__logo"><img src="assets/images/symetria-logotyp.svg" alt="Logotyp firmy Symetria Nieruchomości."></a>
+        <a><button class="button button--border">Sprzedaj <span class="button--text-only-for-desktop">swoją nieruchomość</span> <img src="assets/icons/arrow-top-right.svg" alt="Ikonka strzałki sugerująca otwarcie linku."></button></a>
       </div>
     </div>
   </header>
   <main class="homepage">
     <section class="homepage__hero">
-      <img src="assets/images/Frame 5.jpg" alt="">
+      <picture>
+        <!-- JPG -->
+        <source type="image/jpeg" srcset="assets/images/Frame-5@1x.jpg 1x, assets/images/Frame-5@2x.jpg 2x, assets/images/Frame-5@3x.jpg 3x">
+        <!-- Fallback -->
+        <img src="assets/images/Frame-5@1x.jpg" alt="">
+      </picture>
     </section>
     <section class="homepage__about">
       <div class="wrapper">

@@ -6,14 +6,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font-size: 90px;
-  line-height: 96px;
+  font-size: 48px;
+  line-height: 54px;
+
+  @mixin min480px {
+    font-size: 72px;
+    line-height: 80px;
+  }
+
+  @mixin min1440px {
+    font-size: 90px;
+    line-height: 96px;
+  }
 }
 
 p {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
+
+  @mixin min1440px {
+    font-size: 22px;
+  }
 }

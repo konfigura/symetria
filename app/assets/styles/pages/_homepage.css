@@ -1,25 +1,60 @@
 .homepage {
   &__hero {
-    margin-top: 80px;
+    width: 100%;
+    height: 240px;
+    margin-top: 60px;
+    overflow: hidden;
+
+    @mixin min540px {
+      height: 320px;
+    }
+
+    @mixin min720px {
+      margin-top: 80px;
+      height: auto;
+    }
 
     img {
-      width: 100%;
+      height: 100%;
+      width: auto;
       display: block;
+
+      @mixin min720px {
+        width: 100%;
+        height: auto;
+      }
     }
+
   }
 
   &__about {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     &__textbox {
-      grid-column: 2 / 8;
-      grid-row: 1 / 1;
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
       position: relative;
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 24px;
+
+      @mixin min480px {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+      }
+
+      @mixin min1024px {
+        grid-column: 1 / 6;
+        grid-row: 1 / 1;
+      }
+
+      @mixin min1440px {
+        grid-column: 2 / 8;
+        grid-row: 1 / 1;
+        gap: 60px;
+      }
 
       &__h2 {
         max-width: 566px;
@@ -27,10 +62,37 @@
     }
 
     &__picture {
-      grid-column: 7 / 11;
-      grid-row: 1 / 1;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
       position: relative;
       z-index: 5;
+
+      @mixin min480px {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+      }
+
+      @mixin min720px {
+        grid-column: 3 / 7;
+      }
+
+      @mixin min1024px {
+        grid-column: 6 / 9;
+        grid-row: 1 / 1;
+      }
+
+      @mixin min1200px {
+        grid-column: 6 / 11;
+      }
+
+      @mixin min1440px {
+        grid-column: 7 / 12;
+        grid-row: 1 / 1;
+      }
+
+      img {
+        width: 100%
+      }
     }
 
     &__buttons {
@@ -42,6 +104,7 @@
   }
 
   &__services {
+    display: none;
     background-color: $lightGrey;
     padding-top: 120px;
     padding-bottom: 120px;
