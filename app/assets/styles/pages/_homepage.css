@@ -194,7 +194,108 @@
   }
 
   &__offers {
-    display: none;
+
+    &__textbox {
+      grid-column: 2 / 6;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &__offering {
+      width: 100%;
+      height: min-content;
+      grid-column: 8 / 12;
+      background-color: $lightGrey;
+
+      &__image {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &__info {
+        width: 100%;
+        padding: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        &-details {
+          display: flex;
+          flex-direction: row;
+
+          li {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 6px 8px 6px 24px;
+            position: relative;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 6px;
+              left: 0;
+              width: 18px;
+              height: 18px;
+              background-image: url('assets/images/size-icon.svg');
+              background-repeat: no-repeat;
+            }
+
+            &:nth-child(1), &:nth-child(2) {
+              margin-right: 12px;
+            }
+
+            &:nth-child(2) {
+              &::before {
+                background-image: url('assets/images/room-icon.svg');
+              }
+            }
+
+            &:nth-child(3) {
+              &::before {
+                background-image: url('assets/images/pin-icon.svg');
+              }
+            }
+          }
+        }
+
+        &-heading {
+          font-family: 'Poppins', Helvetica, Arial, sans-serif;
+          font-size: 36px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        &-description {
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 14px;
+        }
+
+        &-price {
+          font-size: 36px;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        &-button {
+          position: absolute;
+          right: 24px;
+          bottom: 24px;
+        }
+      }
+    }
+    
   }
 
 }
