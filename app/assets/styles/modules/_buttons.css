@@ -29,6 +29,11 @@
     color: $white;
   }
 
+  &--centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &--text-only-for-desktop {
     display: none;
 
