@@ -1,5 +1,10 @@
-const currentTask = process.env.npm_lifecycle_event
+const currentTask = process.env.npm_lifecycle_event;
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fse = require('fs-extra');
+const { readdirSync } = require('fs');
 
 const postCSSPlugins = [
   require('postcss-import'),
@@ -9,35 +14,57 @@ const postCSSPlugins = [
   require('autoprefixer')
 ];
 
+class RunAfterCompile {
+  apply(compiler) {
+    compiler.hooks.done.tap('Copy assets', function() {
+      fse.copySync('./app/assets/images', './dist/assets/images');
+      fse.copySync('./app/assets/fonts', './dist/assets/fonts');
+      fse.copySync('./app/assets/icons', './dist/assets/icons');
+    })
+  }
+}
+
+let cssConfig = {
+  test: /\.css$/i,
+  use: [
+    {
+      loader: 'css-loader',
+      options: {
+        url: false
+      }
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        postcssOptions: {
+          plugins: postCSSPlugins
+        }
+      }
+    }
+  ]
+};
+
+let pages = readdirSync('./app').filter(function(file) {
+  return file.endsWith('.html')
+}).map(function(page) {
+  return new HtmlWebpackPlugin({
+    filename: page,
+    template: `./app/${page}`
+  })
+})
+
 let config = {
   entry: './app/assets/scripts/App.js',
+  plugins: pages,
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              url: false
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: postCSSPlugins
-              }
-            }
-          }
-        ]
-      }
+      cssConfig
     ]
   }
 };
 
-if (currentTask = 'dev') {
+if (currentTask == 'dev') {
+  cssConfig.use.unshift('style-loader');
   config.output = {
     filename: 'bundled.js',
     path: path.resolve(__dirname, 'app')
@@ -51,15 +78,37 @@ if (currentTask = 'dev') {
     hot: true,
     port: 3000
   };
-  config.mode = 'development'
+  config.mode = 'development';
 }
 
-if (currentTask = 'build') {
+if (currentTask == 'build') {
+  config.module.rules.push({
+    test: /\.js$/,
+    exclude: /(node_modules)/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  });
+  cssConfig.use.unshift(MiniCssExtractPlugin.loader);
   config.output = {
-    filename: 'bundled.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
   };
   config.mode = 'production';
+  config.optimization = {
+    splitChunks: {chunks: 'all'},
+    minimize: true,
+    minimizer: [`...`, new CssMinimizerPlugin()]
+  };
+  config.plugins.push(
+    new MiniCssExtractPlugin({filename: "styles.[chunkhash].css"}),
+    new RunAfterCompile()
+  )
 }
 
 module.exports = config;
