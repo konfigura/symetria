@@ -12,12 +12,12 @@
         <nav>
           <ul class="header__navigation">
             <li class="header__navigation__list-item"><button class="button"><img src="assets/icons/menu.svg" alt="Ikona przedstawiająca otwarcie menu nawigacyjnego.">Menu</button></li>
-            <li class="header__navigation__list-item">Oferty</li>
-            <li class="header__navigation__list-item">Kontakt</li>
+            <li class="header__navigation__list-item"><a href="#oferty">Oferty</a></li>
+            <li class="header__navigation__list-item"><a href="#footer">Kontakt</a></li>
           </ul>
         </nav>
         <a href="#" class="header__logo"><img src="assets/images/symetria-logotyp.svg" alt="Logotyp firmy Symetria Nieruchomości."></a>
-        <a><button class="button button--border">Sprzedaj <span class="button--text-only-for-desktop">swoją nieruchomość</span> <img src="assets/icons/arrow-top-right.svg" alt="Ikonka strzałki sugerująca otwarcie linku."></button></a>
+        <a href="#footer"><button class="button button--border">Sprzedaj <span class="button--text-only-for-desktop">swoją nieruchomość</span> <img src="assets/icons/arrow-top-right.svg" alt="Ikonka strzałki sugerująca otwarcie linku."></button></a>
       </div>
     </div>
   </header>
@@ -35,7 +35,7 @@
        <div class="grid-12-column">
         <div class="homepage__about__textbox">
           <div class="homepage__about__buttons">
-            <button class="button button--border">Nasze usługi</button>
+            <a href="#uslugi"><button class="button button--border">Nasze usługi</button></a>
             <button class="button button--border">Więcej o nas</button>
           </div>
           <h2 class="homepage__about__textbox__h2">Każda nasza nieruchomość jest wyjątkowa, tak jak każdy nasz klient.</h2>
@@ -47,6 +47,7 @@
        </div>
       </div>
     </section>
+    <a id="uslugi" class="anchor"></a>
     <section class="homepage__services">
       <div class="wrapper">
         <div class="grid-12-column">
@@ -80,6 +81,7 @@
         </div>
       </div>
     </section>
+    <a id="oferty" class="anchor"></a>
     <section class="section homepage__offers">
       <div class="wrapper">
         <div class="grid-12-column">
@@ -133,7 +135,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer wrapper">
+  <footer id="footer" class="footer wrapper">
     <div class="grid-12-column">
       <div class="footer__main-text">
         <h2 class="footer__main-text__heading">Kontakt</h2>
