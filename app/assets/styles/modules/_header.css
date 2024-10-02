@@ -27,7 +27,7 @@
     gap: 36px;
  
     &__list-item {
-      font-size: 20px;
+      font-size: 22px;
 
       &:nth-child(1) > button.button {
         padding-left: 0;

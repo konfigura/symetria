@@ -3,6 +3,7 @@
   color: $white;
   padding-top: 64px;
   padding-bottom: 64px;
+  display: none;
 
   &__main-text {
     grid-column: 2 / 6;
