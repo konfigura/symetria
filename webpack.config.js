@@ -14,6 +14,7 @@ const postCSSPlugins = [
   require('autoprefixer')
 ];
 
+
 class RunAfterCompile {
   apply(compiler) {
     compiler.hooks.done.tap('Copy assets', function() {
