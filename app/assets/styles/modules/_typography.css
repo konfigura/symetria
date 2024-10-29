@@ -5,9 +5,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
 }
 
-h2 {
-  font-size: 48px;
-  line-height: 54px;
+h1, h2 {
+  font-size: 60px;
+  line-height: 68px;
+
+  @mixin min390px {
+    font-size: 64px;
+    line-height: 72px;
+  }
 
   @mixin min480px {
     font-size: 72px;

@@ -3,7 +3,6 @@
   color: $white;
   padding-top: 64px;
   padding-bottom: 64px;
-  display: none;
 
   &__main-text {
     grid-column: 2 / 6;
@@ -29,15 +28,14 @@
     gap: 24px;
     margin-bottom: 0;
 
-    li {
-      flex-basis: auto;
+    a {
+      justify-content: center;
       flex-grow: 1;
 
-      button {
-        width: 100%;
-        justify-content: center;
+      &:last-of-type {
+        flex-grow: 2;
       }
-    }
+    } 
   }
 
   &__address {
@@ -125,6 +123,7 @@
     img {
       position: relative;
       top: 16px;
+      width: 80px;
     }
   }
 }

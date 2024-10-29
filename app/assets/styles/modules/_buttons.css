@@ -1,28 +1,50 @@
 .button {
-  color: $black;
-  background: transparent;
-  border: none;
-  padding: 6px 8px;
+  color: inherit;
+  padding: 8px;
   margin: 0;
   font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 6px;
+  width: fit-content;
 
-  @mixin min720px {
+  @mixin min600px {
+    font-size: 16px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  @mixin min768px {
     font-size: 18px;
-    line-height: 22px;
-    padding: 10px 12px;
-    gap: 10px;
+    padding: 12px;
+    gap: 9px;
   }
 
-  img {
-    height: 12px;
-    width: auto;
+  &--white {
+    color: $white;
+    &::before {
+      filter: invert(1);
+    }
   }
 
-  &--border {
+  &--black {
+    color: $black;
+  }
+
+  &--primary {
+    background-color: black;
+
+    &.button--white {
+      background-color: $white;
+      color: $black;
+      &::before {
+        filter: none;
+      }
+    }
+  }
+
+  &--secondary {
     outline: 1px solid;
 
     &:hover {
@@ -30,20 +52,143 @@
     }
   }
 
-  &--white {
-    color: $white;
+  &--tertiary {
+    background: transparent;
+    border: none;
+  }
+
+  &--icon {
+
+    &-left {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+
+        @mixin min600px {
+          width: 16px;
+          height: 16px;
+        }
+
+        @mixin min768px {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &-right {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        order: 2;
+
+        @mixin min600px {
+          width: 16px;
+          height: 16px;
+        }
+
+        @mixin min768px {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &--menu {
+      &::before {
+        background-image: url("assets/icons/menu.svg");
+      }
+    }
+
+    &--close {
+      &::before {
+        background-image: url("assets/icons/close.svg");
+      }
+    }
+
+    &--arrow-down {
+      &::before {
+        background-image: url("assets/icons/arrow-down.svg");
+      }
+    }
+
+    &--arrow-up {
+      &::before {
+        background-image: url("assets/icons/arrow-up.svg");
+      }
+    }
+
+    &--arrow-right {
+      &::before {
+        background-image: url("assets/icons/arrow-right.svg");
+      }
+    }
+
+    &--arrow-top-right {
+      &::before {
+        background-image: url("assets/icons/arrow-top-right.svg");
+      }
+    }
+
+    &--phone {
+      &::before {
+        background-image: url("assets/icons/phone.svg");
+      }
+    }
+
+    &--mail {
+      &::before {
+        background-image: url("assets/icons/mail.svg");
+      }
+    }
+
+    &--map {
+      &::before {
+        background-image: url("assets/icons/map.svg");
+      }
+    }
   }
 
   &--centered {
     margin-left: auto;
     margin-right: auto;
   }
+}
 
-  &--text-only-for-desktop {
-    display: none;
+.button--motyl {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url("assets/icons/symetria-motyl.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 
-    @mixin min1200px {
-      display: inline;
-    }
+  &--white {
+    background-image: url("assets/icons/symetria-motyl--white.svg");
+  }
+
+  &--menu {
+    width: 60px;
+    height: 60px;
+  }
+
+  @mixin min600px {
+    width: 38px;
+    height: 38px;
+  }
+
+  @mixin min768px {
+    width: 44px;
+    height: 44px;
   }
 }

@@ -8,26 +8,59 @@
 <body>
   <header class="header">
     <div class="wrapper">
-      <div class="header__flex-layout">
-        <nav>
-          <ul class="header__navigation">
-            <li class="header__navigation__list-item"><button class="button"><img src="assets/icons/menu.svg" alt="Ikona przedstawiająca otwarcie menu nawigacyjnego.">Menu</button></li>
-            <li class="header__navigation__list-item"><a href="#oferty">Oferty</a></li>
-            <li class="header__navigation__list-item"><a href="#footer">Kontakt</a></li>
-          </ul>
-        </nav>
-        <a href="#" class="header__logo"><img src="assets/images/symetria-logotyp.svg" alt="Logotyp firmy Symetria Nieruchomości."></a>
-        <a href="#footer"><button class="button button--border">Sprzedaj <span class="button--text-only-for-desktop">swoją nieruchomość</span> <img src="assets/icons/arrow-top-right.svg" alt="Ikonka strzałki sugerująca otwarcie linku."></button></a>
-      </div>
+        <div class="header__container grid-12-column">
+            <nav class="header__nav">
+                <ul class="header__navigation">
+                    <li class="header__navigation__list-item">
+                        <a id="menu-opener" class="button button--icon-left button--icon--menu pointer">Menu</a>
+                    </li>
+                    <li class="header__navigation__list-item">
+                        <a href="#oferty" class="button">Oferty</a>
+                    </li>
+                    <li class="header__navigation__list-item">
+                        <a href="#footer" class="button">Kontakt</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__logo">
+                <img src="assets/icons/symetria-motyl.svg" alt="Sygnet w kształcie motyla firmy Symetria Nieruchomości." class="header__logo__sygnet">
+                <img src="assets/images/logo.svg" alt="Logotyp firmy Symetria Nieruchomości." class="header__logo__logotyp">
+            </a>
+            <a href="#" class="header__cyprus button button--icon-right button--icon--arrow-top-right">
+                <span class="header__cyprus__text-mobile">Cypr </span>
+                <span class="header__cyprus__text-desktop">Nieruchomości na Cyprze </span>
+            </a>
+            <a class="header__scroll button button--icon-right button--icon--arrow-down">Przewiń </a>
+        </div>
     </div>
   </header>
+  <menu class="menu">
+    <div class="menu__top-buttons">
+        <a href="#" class="button--motyl button--motyl--white button--motyl--menu"></a>
+        <a id="menu-closer" class="button button--white button--icon-right button--icon--close pointer">Zamknij</a> 
+    </div>
+    <nav class="menu__nav">
+        <ul>
+            <li class="menu__nav__links"><a href="">Start</a></li>
+            <li class="menu__nav__links"><a href="">O nas</a></li>
+            <li class="menu__nav__links"><a href="">Oferty</a></li>
+            <li class="menu__nav__links"><a href="">Usługi</a></li>
+            <li class="menu__nav__links"><a href="">Kontakt</a></li>
+        </ul>
+    </nav>
+    <div class="menu__social-icons">
+        <a href="https://facebook.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--facebook">Facebook</a>
+        <a href="https://instagram.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--instagram">Instagram</a>
+        <a href="https://whatsapp.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--whatsapp">WhatsApp</a>
+    </div>
+  </menu>
   <main class="homepage">
     <section class="homepage__hero">
       <picture>
         <!-- JPG -->
-        <source type="image/jpeg" srcset="assets/images/Frame-5@1x.jpg 1x, assets/images/Frame-5@2x.jpg 2x, assets/images/Frame-5@3x.jpg 3x">
+        <source type="image/jpeg" srcset="assets/images/SYMETRIA__Homepage__Hero@1x.jpg 1x, assets/images/SYMETRIA__Homepage__Hero@2x.jpg 2x, assets/images/SYMETRIA__Homepage__Hero@3x.jpg 3x">
         <!-- Fallback -->
-        <img src="assets/images/Frame-5@1x.jpg" alt="">
+        <img src="assets/images/SYMETRIA__Homepage__Hero@1x.jpg" alt="">
       </picture>
     </section>
     <section class="homepage__about">
@@ -35,19 +68,38 @@
        <div class="grid-12-column">
         <div class="homepage__about__textbox">
           <div class="homepage__about__buttons">
-            <a href="#uslugi" class="button button--border">Nasze usługi</a>
-            <a href="#" class="button button--border">Więcej o nas</a>
+            <a href="#" class="button--motyl"></a>
+            <a href="#" class="button button--secondary button--icon-left button--icon--arrow-down">Dlaczego my?</a>
           </div>
-          <h2 class="homepage__about__textbox__h2">Każda nasza nieruchomość jest wyjątkowa, tak jak każdy nasz klient.</h2>
+          <h1 class="homepage__about__textbox__h2">Każda nasza nieruchomość jest wyjątkowa, tak jak każdy nasz klient.</h1>
           <p>Dbamy o to, aby każda oferta była idealnie dopasowana do Twoich potrzeb i oczekiwań, a nasz wachlarz usług zapewniał kompleksowe wsparcie na każdym etapie. Twoja satysfakcja jest dla nas priorytetem, dlatego każdą transakcję traktujemy z najwyższą starannością.</p>
         </div>
         <div class="homepage__about__picture">
-          <img src="assets/images/homepage-section-about.jpg" alt="Zdjęcie przedstawiające wnętrze mieszkania.">
+          <img src="assets/images/symetria__homepage__about.jpg" alt="Zdjęcie przedstawiające wnętrze mieszkania.">
         </div>
        </div>
       </div>
     </section>
-    <a id="uslugi" class="anchor"></a>
+    <a id="why" class="anchor"></a>
+    <section class="section homepage__why">
+        <div class="wrapper">
+            <div class="grid-12-column">
+                <div class="homepage__why__textbox">
+                    <a href="#" class="button--motyl button--motyl--white homepage__why__motyl"></a>
+                    <h2>Dlaczego Symetria?</h2>
+                    <p>W Symetrii wierzymy, że nieruchomości to nie tylko transakcje, ale przede wszystkim ludzie.</p>
+                    <p>Naszą misją jest nie tylko pomóc w znalezieniu idealnego miejsca do życia lub inwestycji, ale również zapewnić wsparcie na każdym etapie procesu. Nasz zespół stawia na szczerość, rzetelność i dbałość o szczegóły, by każdy klient mógł poczuć, że jest w dobrych rękach.</p>
+                    <p>Bez względu na to, czy szukasz nowego mieszkania, domu, czy biura – jesteśmy tu, aby ułatwić Ci każdy krok.</p>
+                    <a href="" class="button button--primary button--centered button--white button--icon-right button--icon--arrow-right">Więcej o nas</a>
+                </div>
+                <div class="fullwidth homepage__why__imagebox">
+                    <img src="assets/images/SYMETRIA__Homepage__Why.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!--<a id="uslugi" class="anchor"></a>
     <section class="homepage__services">
       <div class="wrapper">
         <div class="grid-12-column">
@@ -80,16 +132,112 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
     <a id="oferty" class="anchor"></a>
     <section class="section homepage__offers">
       <div class="wrapper">
         <div class="grid-12-column">
-          <div class="homepage__offers__textbox">
-            <h2>Oferty</h2>
-            <p>Zapoznaj się z naszymi aktualnymi ofertami nieruchomości, wśród których znajdziesz idealne miejsce do życia lub inwestycji. Oferujemy starannie wyselekcjonowane mieszkania, domy i apartamenty, które spełnią Twoje najwyższe oczekiwania i standardy.</p>
-            <button class="button button--border">Przewiń aby poznać oferty</button>
-            <button class="button button--border">Zobacz wszystkie nieruchomości</button>
+          <div class="homepage__offers__flexbox">
+            <div class="homepage__offers__textbox">
+                <h2>Oferty</h2>
+                <p>Zapoznaj się z naszymi aktualnymi ofertami nieruchomości, wśród których znajdziesz idealne miejsce do życia lub inwestycji. Oferujemy starannie wyselekcjonowane mieszkania, domy i apartamenty, które spełnią Twoje najwyższe oczekiwania i standardy.</p>
+                <a class="button button--tertiary button--icon-right button--icon--arrow-down">Przewiń aby poznać oferty</a>
+                <a class="button button--secondary button--icon-right button--icon--arrow-top-right">Zobacz wszystkie nieruchomości</a>
+            </div>
+            <div class="homepage__offers__offerbox">
+                <div class="homepage__offers__offerbox__picture">
+                    <img src="https://static.esticrm.pl/public/images/offers/17867/9244397/75238628_max.jpg" alt="">
+                </div>
+                <div class="homepage__offers__offerbox__info">
+                    <ul class="homepage__offers__offerbox__info-details">
+                        <li>23.85 m<sup>2</sup></li>
+                        <li>1 pokój</li>
+                        <li>Pomorzany</li>
+                    </ul>
+                    <h3>Kawalerka po remoncie na Pomorzanach, pod wynajem!</h3>
+                    <p>TYLKO U NAS!<br><br>Oferta sprzedaży <strong>w pełni wyposażonej kawalerki usytuowanej na 1 piętrze niskiego budynku na Pomorzanach. </strong><span style="text-decoration: underline;">Doskonała lokalizacja! Do ścisłego centrum zaledwie 5 minut samochodem.</span></p>
+                    <p class="homepage__offers__offerbox__info-price"><span>Sprzedaż |</span> 325000.00 zł</p>
+                </div>
+                <div class="homepage__offers__offerbox__buttons">
+                    <a href="" class="button button--secondary button--icon-left button--icon--mail">Zadaj pytanie</a>
+                    <a href="" class="button button--secondary button--icon-left button--icon--phone">Umów spotkanie</a>
+                </div>
+            </div>
+
+            <div class="homepage__offers__offerbox">
+                <div class="homepage__offers__offerbox__picture">
+                    <img src="https://static.esticrm.pl/public/images/offers/17867/9389627/77217995_max.jpg" alt="">
+                </div>
+                <div class="homepage__offers__offerbox__info">
+                    <ul class="homepage__offers__offerbox__info-details">
+                        <li>31.45 m<sup>2</sup></li>
+                        <li>1 pokój</li>
+                        <li>Gumieńce</li>
+                    </ul>
+                    <h3>Kawalerka z balkonem na Nowej Cukrowni</h3>
+                    <p>Ofertą sprzedaży jest k<strong>omfortowa i słoneczna kawalerka usytuowana na 1 piętrze niskiego budynku z 2018 r. na os. Nowa Cukrownia na Gumieńcach.</strong></p>
+                    <p class="homepage__offers__offerbox__info-price"><span>Sprzedaż |</span> 399000.00 zł</p>
+                </div>
+                <div class="homepage__offers__offerbox__buttons">
+                    <a href="" class="button button--secondary button--icon-left button--icon--mail">Zadaj pytanie</a>
+                    <a href="" class="button button--secondary button--icon-left button--icon--phone">Umów spotkanie</a>
+                </div>
+            </div>
+
+            <div class="homepage__offers__offerbox">
+                <div class="homepage__offers__offerbox__picture">
+                    <img src="https://static.esticrm.pl/public/images/offers/17867/9466850/78325637_max.jpg" alt="">
+                </div>
+                <div class="homepage__offers__offerbox__info">
+                    <ul class="homepage__offers__offerbox__info-details">
+                        <li>78.78 m<sup>2</sup></li>
+                        <li>4 pokoje</li>
+                        <li>Goleniów</li>
+                    </ul>
+                    <h3>Słoneczne 4-pokojowe mieszkanie w Goleniowie</h3>
+                    <p>Ofertą sprzedaży jest <strong>słoneczne, 4-pokojowe mieszkanie usytuowane na trzecim piętrze niskiego budynku w samym centrum Goleniowa</strong>.</p>
+                    <p class="homepage__offers__offerbox__info-price"><span>Sprzedaż |</span> 549000.00 zł</p>
+                </div>
+                <div class="homepage__offers__offerbox__buttons">
+                    <a href="" class="button button--secondary button--icon-left button--icon--mail">Zadaj pytanie</a>
+                    <a href="" class="button button--secondary button--icon-left button--icon--phone">Umów spotkanie</a>
+                </div>
+            </div>
+
+            <div class="homepage__offers__offerbox">
+                <div class="homepage__offers__offerbox__picture">
+                    <img src="https://static.esticrm.pl/public/images/offers/17867/9482879/78606239_max.jpg" alt="">
+                </div>
+                <div class="homepage__offers__offerbox__info">
+                    <ul class="homepage__offers__offerbox__info-details">
+                        <li>57.90 m<sup>2</sup></li>
+                        <li>3 pokoje</li>
+                        <li>Krzekowo</li>
+                    </ul>
+                    <h3>3 pokoje z widokiem na zieleń, Krzekowo-Bezrzecze</h3>
+                    <p>Ofertą sprzedaży jest <strong>dwupoziomowe 3-pokojowe mieszkanie z balkonem usytuowane na 1 piętrze 2-piętrowego budynku w Szczecinie, w dzielnicy Krzekowo-Bezrzecze.</strong></p>
+                    <p class="homepage__offers__offerbox__info-price"><span>Sprzedaż |</span> 689000.00 zł</p>
+                </div>
+                <div class="homepage__offers__offerbox__buttons">
+                    <a href="" class="button button--secondary button--icon-left button--icon--mail">Zadaj pytanie</a>
+                    <a href="" class="button button--secondary button--icon-left button--icon--phone">Umów spotkanie</a>
+                </div>
+            </div>
+          </div>
+          
+          
+          <!--
+          <div class="homepage__offers__offering">
+            <div class="homepage__offers__offering__image">
+              <img src="assets/images/szczecinska-20.png" alt="">
+            </div>
+            <div class="homepage__offers__offering__info">
+              
+              <h3 class="homepage__offers__offering__info-heading">Szczecińska 20</h3>
+              <p class="homepage__offers__offering__info-description">Nowoczesna inwestycja w sercu Warszewa. Mieszkanie na poddaszu z przepięknym widokiem na centrum miasta i dobrym dostępem komunikacyjnym.</p>
+              <p class="homepage__offers__offering__info-price">786 000 zł</p>
+              <button class="button button--border homepage__offers__offering__info-button">Poznaj ofertę</button>
+            </div>
           </div>
           <div class="homepage__offers__offering">
             <div class="homepage__offers__offering__image">
@@ -107,9 +255,42 @@
               <button class="button button--border homepage__offers__offering__info-button">Poznaj ofertę</button>
             </div>
           </div>
+          <div class="homepage__offers__offering">
+            <div class="homepage__offers__offering__image">
+              <img src="assets/images/szczecinska-20.png" alt="">
+            </div>
+            <div class="homepage__offers__offering__info">
+              <ul class="homepage__offers__offering__info-details">
+                <li>89 m<sup>2</sup></li>
+                <li>3 pokoje</li>
+                <li>Warszewo</li>
+              </ul>
+              <h3 class="homepage__offers__offering__info-heading">Szczecińska 20</h3>
+              <p class="homepage__offers__offering__info-description">Nowoczesna inwestycja w sercu Warszewa. Mieszkanie na poddaszu z przepięknym widokiem na centrum miasta i dobrym dostępem komunikacyjnym.</p>
+              <p class="homepage__offers__offering__info-price">786 000 zł</p>
+              <button class="button button--border homepage__offers__offering__info-button">Poznaj ofertę</button>
+            </div>
+          </div>
+          <div class="homepage__offers__offering">
+            <div class="homepage__offers__offering__image">
+              <img src="assets/images/szczecinska-20.png" alt="">
+            </div>
+            <div class="homepage__offers__offering__info">
+              <ul class="homepage__offers__offering__info-details">
+                <li>89 m<sup>2</sup></li>
+                <li>3 pokoje</li>
+                <li>Warszewo</li>
+              </ul>
+              <h3 class="homepage__offers__offering__info-heading">Szczecińska 20</h3>
+              <p class="homepage__offers__offering__info-description">Nowoczesna inwestycja w sercu Warszewa. Mieszkanie na poddaszu z przepięknym widokiem na centrum miasta i dobrym dostępem komunikacyjnym.</p>
+              <p class="homepage__offers__offering__info-price">786 000 zł</p>
+              <button class="button button--border homepage__offers__offering__info-button">Poznaj ofertę</button>
+            </div>
+          </div>-->
         </div>
       </div>
     </section>
+    <!--
     <section class="section homepage__problem">
       <div class="wrapper">
         <div class="grid-12-column">
@@ -134,57 +315,56 @@
         </div>
       </div>
     </section>
+    -->
   </main>
-  <footer id="footer" class="footer wrapper">
-    <div class="grid-12-column">
-      <div class="footer__main-text">
-        <h2 class="footer__main-text__heading">Kontakt</h2>
-        <p class="footer__main-text__paragraph">Chętnie poznamy Twoje potrzeby i pomożemy znaleźć nieruchomość dopasowaną do Ciebie. Skontaktuj się z nami telefonicznie lub mailowo, aby omówić naszą pomoc w realizacji Twoich planów.</p>
-      </div>
-      <ul class="footer__buttons-list">
-        <li><button class="button button--border button--white"><img src="assets/icons/phone.svg" alt="">Zadzwoń do nas</button></li>
-        <li><button class="button button--border button--white"><img src="assets/icons/mail.svg" alt="">Napisz do nas</button></li>
-        <li><button class="button button--border button--white"><img src="assets/icons/map.svg" alt="">Wskazówki dojazdu w Google Maps</button></li>
-        <li><button class="button button--border button--white"><img src="assets/icons/map.svg" alt="">Wskazówki dojazdu w Google Maps</button></li>
-      </ul>
-      <address class="footer__address">
-        <p>Dane kontaktowe</p>
-        <ul class="footer__address__details">
-          <li>Agnieszka Dzikowska Symetria Nieruchomości</li>
-          <li>NIP: 8513120558</li>
-          <li>ul. Księcia Barnima III Wielkiego 21/U2</li>
-          <li>71-437 Szczecin, Polska</li>
-        </ul>
-      </address>
-      <div class="footer__social-media">
-        <p>Media społecznościowe</p>
-        <ul class="footer__social-media__icons-list">
-          <li><img src="assets/icons/facebook.svg" alt="Ikona platformy społecznościowej Facebook."></li>
-          <li><img src="assets/icons/instagram.svg" alt="Ikona platformy społecznościowej Instagram."></li>
-          <li><img src="assets/icons/tiktok.svg" alt="Ikona platformy społecznościowej TikTok."></li>
-          <li><img src="assets/icons/linkedin.svg" alt="Ikona platformy społecznościowej LinkedIn."></li>
-          <li><img src="assets/icons/whatsapp.svg" alt="Ikona platformy społecznościowej WhatsApp."></li>
-        </ul>
-      </div>
-      <nav class="footer__page-nav">
-        <p>Mapa strony</p>
-        <ul class="footer__page-nav__links">
-          <li>Start</li>
-          <li>O nas</li>
-          <li>Oferty</li>
-          <li>Usługi</li>
-          <li>Kontakt</li>
-        </ul>
-        <ul class="footer__page-nav__settings">
-          <li>Polityka prywatności</li>
-          <li>Ustawienia cookies</li>
-        </ul>
-        <a href="#" class="footer__page-nav__back-to-top"><button class="button button--white"><img src="assets/icons/arrow-top.svg" alt=""> Powrót do góry</button></a>
-      </nav>
-      <p class="footer__copywright">© 2024 Symetria Nieruchomości. Wszelkie prawa zastrzeżone.</p>
-      <p class="footer__author">Projekt i wykonanie: <img src="assets/images/juszczak-logotyp.svg" alt="Logotyp wykonawcy strony internetowej, Krystiana Juszczaka."></p>
-    </div>
-    
+  <footer id="footer" class="footer">
+    <div class="wrapper">
+        <div class="grid-12-column">
+            <div class="footer__main-text">
+              <h2 class="footer__main-text__heading">Kontakt</h2>
+              <p class="footer__main-text__paragraph">Chętnie poznamy Twoje potrzeby i pomożemy znaleźć nieruchomość dopasowaną do Ciebie. Skontaktuj się z nami telefonicznie lub mailowo, aby omówić naszą pomoc w realizacji Twoich planów.</p>
+            </div>
+            <div class="footer__buttons-list">
+              <a href="" class="button button--secondary button--white button--icon-left button--icon--phone">Zadzwoń do nas</a>
+              <a href="" class="button button--secondary button--white button--icon-left button--icon--mail">Napisz do nas</a>
+              <a href="" class="button button--secondary button--white button--icon-left button--icon--map">Wskazówki dojazdu do naszego biura</a>
+            </div>
+            <address class="footer__address">
+              <p>Dane kontaktowe</p>
+              <ul class="footer__address__details">
+                <li>Agnieszka Dzikowska Symetria Nieruchomości</li>
+                <li>NIP: 8513120558</li>
+                <li>ul. Księcia Barnima III Wielkiego 21/U2</li>
+                <li>71-437 Szczecin, Polska</li>
+              </ul>
+            </address>
+            <div class="footer__social-media">
+                <p>Media społecznościowe</p>
+              <div class="menu__social-icons">
+                <a href="https://facebook.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--facebook">Facebook</a>
+                <a href="https://instagram.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--instagram">Instagram</a>
+                <a href="https://whatsapp.com/" target="_blank" class="menu__social-icons__link menu__social-icons__link--whatsapp">WhatsApp</a>
+            </div>
+            </div>
+            <nav class="footer__page-nav">
+              <p>Mapa strony</p>
+              <ul class="footer__page-nav__links">
+                <li>Start</li>
+                <li>O nas</li>
+                <li>Oferty</li>
+                <li>Usługi</li>
+                <li>Kontakt</li>
+              </ul>
+              <ul class="footer__page-nav__settings">
+                <li>Polityka prywatności</li>
+                <li>Ustawienia cookies</li>
+              </ul>
+              <a href="#" class="button button--white button--tertiary button--icon-left button--icon--arrow-up">Powrót do góry</a>
+            </nav>
+            <p class="footer__copywright">© 2024 Symetria Nieruchomości. Wszelkie prawa zastrzeżone.</p>
+            <p class="footer__author">Projekt i wykonanie: <img src="assets/images/juszczak-logotyp.svg" alt="Logotyp wykonawcy strony internetowej, Krystiana Juszczaka."></p>
+          </div>
+    </div>    
   </footer>
 </body>
-</html>
+</html> 
