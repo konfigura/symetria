@@ -340,33 +340,72 @@
   &__offers {
 
     &__flexbox {
-      grid-column: 2/10;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    &__textbox {
-      width: 504px;
+      grid-column: 1/5;
       display: flex;
       flex-direction: column;
       gap: 32px;
+
+      @mixin min600px {
+        grid-column: 2/6;
+      }
+
+      @mixin min768px {
+        grid-column: 2/8;
+      }
+
+      @mixin min1024px {
+        grid-column: 1/9;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      @mixin min1360px {
+        grid-column: 2/10;
+      }
+    }
+
+    &__textbox {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @mixin min1024px {
+        width: 540px;
+      }
+
+      @mixin min1360px {
+        width: 504px;
+      }
     }
 
     &__offerbox {
-      width: 504px;
+      width: 100%;
       background-color: $lightGrey;
+
+      @mixin min1024px {
+        width: 460px;
+      }
+
+      @mixin min1360px {
+        width: 504px;
+      }
 
       &__picture {
         width: 100%;
-        height: 320px;
+        height: 240px;
         overflow: hidden;
+
+        @mixin min768px {
+          height: 320px;
+        }
 
         img {
           width: 100%;
           height: auto;
           object-fit: contain;
+          position: relative;
+          top: -25%;
         }
       }
 
@@ -376,12 +415,26 @@
         &-details {
           display: flex;
           flex-direction: row;
+          justify-content: space-between;
 
           li {
-            font-size: 18px;
+            font-size: 12px;
+            line-height: 18px;
             font-weight: 500;
             padding: 6px 8px 6px 24px;
             position: relative;
+
+            @mixin min480px {
+              font-size: 14px;
+            }
+
+            @mixin min540px {
+              font-size: 16px;
+            }
+
+            @mixin min768px {
+              font-size: 18px;
+            }
 
             &::before {
               content: "";
@@ -415,10 +468,14 @@
 
         h3 {
           font-family: 'Poppins', Helvetica, Arial, sans-serif;
-          font-size: 32px;
+          font-size: 24px;
           font-weight: 600;
           margin-top: 12px;
           margin-bottom: 12px;
+
+          @mixin min768px {
+            font-size: 32px;
+          }
         }
 
         p {
@@ -426,8 +483,12 @@
         }
 
         p&-price {
-          font-size: 32px;
+          font-size: 24px;
           margin-bottom: 0;
+
+          @mixin min768px {
+            font-size: 32px;
+          }
 
           span {
             color: $mediumBrown;
