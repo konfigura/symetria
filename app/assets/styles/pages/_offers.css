@@ -1,0 +1,24 @@
+.offers {
+  &__filterbox {
+    grid-column: 1/5;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @mixin min600px {
+      grid-column: 2/6;
+    }
+
+    @mixin min768px {
+      grid-column: 2/8;
+    }
+
+    @mixin min1360px {
+      grid-column: 3/9;
+    }
+
+    &__form {
+      display: none;
+    }
+  }
+}
