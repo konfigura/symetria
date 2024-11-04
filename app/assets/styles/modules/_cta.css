@@ -1,0 +1,44 @@
+.cta {
+  background-color: #68635D;
+  color: $white;
+
+  &__textbox {
+    grid-column: 1/5;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @mixin min600px {
+      grid-column: 2/6;
+    }
+
+    @mixin min768px {
+      grid-column: 3/7;
+    }
+
+    @mixin min1024px {
+      grid-column: 2/8;
+    }
+
+    @mixin min1360px {
+      grid-column: 3/9;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @mixin min1800px {
+      grid-column: 4/10;
+    }
+
+    h2 {
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 48px;
+
+      @mixin min768px {
+        font-size: 60px;
+        line-height: 72px;
+      }
+    }
+  }
+}

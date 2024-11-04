@@ -1,0 +1,187 @@
+.contact {
+
+  &__hero {
+    margin-top: 60px;
+  }
+
+  &__info {
+    padding-bottom: 120px;
+
+    @mixin min1360px {
+      margin-top: -80px;
+    }
+
+    & > .wrapper > .grid-12-column {
+      align-items: end;
+    }
+
+    &__textbox {
+      grid-column: 1/5;
+      grid-row: 1/2;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-top: 36px;
+      padding-bottom: 36px;
+
+      @mixin min600px {
+        grid-column: 1/7;
+      }
+
+      @mixin min768px {
+        grid-column: 2/8;
+        gap: 36px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      @mixin min1024px {
+        grid-column: 2/6;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      @mixin min600px {
+        gap: 36px;
+      }
+
+      .button {
+        justify-content: center;
+        flex-grow: 1;
+      }
+    }
+
+    &__form {
+      background-color: $lightGrey;
+      grid-column: 1/5;
+      grid-row: 2/3;
+      padding: 18px;
+
+      @mixin min600px {
+        grid-column: 1/7;
+        padding: 36px;
+      }
+
+      @mixin min768px {
+        grid-column: 2/8;
+      }
+
+      @mixin min1360px {
+        grid-column: 6/10;
+        grid-row: 1/2;
+      }
+
+      @mixin min1800px {
+        grid-column: 8/12;
+      }
+
+      h2 {
+        font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        opacity: .5;
+        line-height: 1;
+        margin-top: 24px;
+        margin-bottom: 36px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        padding-bottom: 24px;
+
+        label {
+          font-size: 0px;
+          text-indent: -9999px;
+          opacity: 0;
+          position: absolute;
+        }
+
+        input, textarea {
+          font-size: 18px;
+          padding: 12px;
+          background-color: $lightGrey;
+          border-radius: 0;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(122,122,122);
+          border-image: none;
+        }
+
+        button {
+          border-radius: 0;
+          border-width: 1px;
+          border-style: solid;
+          border-color: inherit;
+          border-image: none;
+          background-color: $lightGrey;
+        }
+      }
+    }
+
+  }
+
+  &__map {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image: url("assets/images/SYMETRIA__Kontakt-Mapa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__textbox {
+      background-color: $white;
+      grid-column: 1/5;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @mixin min600px {
+        grid-column: 2/6;
+      }
+
+      @mixin min1360px {
+        grid-column: 2/5;
+      }
+
+      @mixin min1800px {
+        grid-column: 3/6;
+      }
+
+      h2 {
+        font-size: 64px;
+        line-height: 1;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      address {
+        font-style: normal;
+        text-decoration: underline;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      &__buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        a {
+          flex-basis: 50%;
+          flex-grow: 1;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

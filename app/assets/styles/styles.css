@@ -13,5 +13,8 @@
 @import './modules/_header.css';
 @import './modules/_menu.css';
 @import './modules/_footer.css';
+@import './modules/_cta.css';
 
 @import './pages/_homepage.css';
+@import './pages/_about.css';
+@import './pages/_contact.css';
