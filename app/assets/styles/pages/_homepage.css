@@ -27,6 +27,14 @@
     padding-top: 60px;
     padding-bottom: 18px;
 
+    @mixin min430px {
+      padding-bottom: 24px;
+    }
+
+    @mixin min480px {
+      padding-bottom: 32px;
+    }
+
     @mixin min1024px {
       padding-top: 120px;
       padding-bottom: 120px;
@@ -46,9 +54,21 @@
         grid-row: 1 / 2;
       }
 
+      @mixin min600px {
+        grid-column: 1/6;
+      }
+
       @mixin min1024px {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
         grid-row: 1 / 1;
+      }
+
+      @mixin min1200px {
+        align-self: center;
+      }
+
+      @mixin min1360px {
+        grid-column: 2/6;
       }
 
       @mixin min1440px {
@@ -59,6 +79,10 @@
 
       &__h2 {
         max-width: 566px;
+      }
+
+      p {
+        max-width: 440px;
       }
     }
 
@@ -73,22 +97,30 @@
         grid-row: 2 / 3;
       }
 
+      @mixin min600px {
+        grid-column: 1/7;
+      }
+
       @mixin min720px {
         grid-column: 3 / 7;
       }
 
-      @mixin min1024px {
-        grid-column: 6 / 9;
-        grid-row: 1 / 1;
+      @mixin min768px {
+        grid-column: 5/9;
+        grid-row: 1/2;
+        align-self: end;
       }
 
-      @mixin min1200px {
-        grid-column: 6 / 11;
+      @mixin min1024px {
+        grid-column: 5 / 9;
+      }
+
+      @mixin min1360px {
+        grid-column: 6/10;
       }
 
       @mixin min1440px {
-        grid-column: 7 / 11;
-        grid-row: 1 / 1;
+        grid-column: 6 / 11;
       }
 
       img {
@@ -208,6 +240,9 @@
   }
 
   &__offers {
+    @mixin min1360px {
+      padding-bottom: 80px;
+    }
 
     &__flexbox {
       grid-column: 1/5;
@@ -216,7 +251,7 @@
       gap: 32px;
 
       @mixin min600px {
-        grid-column: 2/6;
+        grid-column: 1/7;
       }
 
       @mixin min768px {
@@ -227,6 +262,7 @@
         grid-column: 1/9;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
       }
 
       @mixin min1360px {
@@ -252,9 +288,14 @@
     &__offerbox {
       width: 100%;
       background-color: $lightGrey;
+      margin-bottom: 48px;
 
       @mixin min1024px {
-        width: 460px;
+        width: 428px;
+      }
+
+      @mixin min1200px {
+        width: 480px;
       }
 
       @mixin min1360px {
@@ -270,12 +311,14 @@
           height: 320px;
         }
 
+        @mixin min1024px {
+          height: 460px;
+        }
+
         img {
           width: 100%;
-          height: auto;
-          object-fit: contain;
-          position: relative;
-          top: -25%;
+          height: 100%;
+          object-fit: cover;
         }
       }
 
@@ -338,13 +381,14 @@
 
         h3 {
           font-family: 'Poppins', Helvetica, Arial, sans-serif;
-          font-size: 24px;
-          font-weight: 600;
+          font-size: 22px;
+          font-weight: 500;
           margin-top: 12px;
           margin-bottom: 12px;
 
           @mixin min768px {
-            font-size: 32px;
+            font-size: 28px;
+            margin-top: 24px;
           }
         }
 
@@ -353,11 +397,11 @@
         }
 
         p&-price {
-          font-size: 24px;
+          font-size: 18px;
           margin-bottom: 0;
 
           @mixin min768px {
-            font-size: 32px;
+            font-size: 28px;
           }
 
           span {
@@ -372,93 +416,19 @@
         padding-right: 24px;
         padding-bottom: 24px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
         gap: 24px;
 
+        @mixin min430px {
+          flex-direction: row;
+        }
+
         a.button {
-          flex: 1;
+          width: 100%;
           justify-content: center;
         }
       }
     }
-    /*
-    &__offering {
-      width: 100%;
-      height: min-content;
-      grid-column: 1 / 5;
-      grid-row: 2 / 3;
-      background-color: $lightGrey;
-
-      @mixin min720px {
-        grid-column: 2 / 6;
-      }
-
-      @mixin min1024px {
-        grid-column: 5 / 9;
-        grid-row: 1 / 2;
-      }
-
-      @mixin min1200px {
-        grid-column: 7 / 11;
-      }
-
-      @mixin min1440px {
-        grid-column: 8 / 12;
-      }
-
-      &__image {
-        width: 100%;
-        overflow: hidden;
-
-        img {
-          display: block;
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
-      &__info {
-        width: 100%;
-        padding: 24px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-
-        &-details {
-          
-        }
-
-        &-heading {
-          font-family: 'Poppins', Helvetica, Arial, sans-serif;
-          font-size: 36px;
-          font-weight: 500;
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-
-        &-description {
-          margin-top: 0;
-          margin-bottom: 0;
-          font-size: 14px;
-        }
-
-        &-price {
-          font-size: 36px;
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-
-        &-button {
-          position: absolute;
-          right: 24px;
-          bottom: 24px;
-        }
-      }
-    }
-    */
   }
 
   &__problem {

@@ -19,8 +19,8 @@
   transition-timing-function: ease-in-out;
 
   @mixin min430px {
-    left: -430px;
-    width: 430px;
+    left: -320px;
+    width: 320px;
   }
 
   &--opened {

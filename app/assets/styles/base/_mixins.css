@@ -41,7 +41,7 @@
 }
 
 @define-mixin min834px {
-  @media sc reen and (min-width: 834px) {
+  @media screen and (min-width: 834px) {
     @mixin-content;
   }
 }

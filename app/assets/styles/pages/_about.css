@@ -1,5 +1,34 @@
 .about {
   &__hero {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+
+    @mixin min480px {
+      height: 360px;
+    }
+
+    @mixin min600px {
+      height: 420px;
+    }
+
+    @mixin min834px {
+      height: 480px;
+    }
+
+    @mixin min1024px {
+      height: 600px;
+    }
+
+    @mixin min1360px {
+      height: 720px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__info {

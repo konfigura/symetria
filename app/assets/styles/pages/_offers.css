@@ -1,12 +1,45 @@
 .offers {
+
+  &__hero {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+
+    @mixin min480px {
+      height: 360px;
+    }
+
+    @mixin min600px {
+      height: 420px;
+    }
+
+    @mixin min834px {
+      height: 480px;
+    }
+
+    @mixin min1024px {
+      height: 600px;
+    }
+
+    @mixin min1360px {
+      height: 720px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__filterbox {
     grid-column: 1/5;
     text-align: center;
-    padding-top: 48px;
     padding-bottom: 48px;
+    padding-top: 48px;
 
     @mixin min600px {
-      grid-column: 2/6;
+      grid-column: 1/7;
     }
 
     @mixin min768px {
@@ -14,7 +47,18 @@
     }
 
     @mixin min1360px {
-      grid-column: 3/9;
+      grid-column: 2/10;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+
+      @mixin min600px {
+        font-size: 60px;
+      }
     }
 
     &__form {
