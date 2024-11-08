@@ -33,8 +33,24 @@
 
   &__info {
     background-color: $lightGrey;
+    position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
+  
+    &::before {
+      content: "";
+      background-image: url('assets/images/geometric_8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      background-blend-mode: multiply;
+    }
 
     @mixin min768px {
       padding-top: 80px;
@@ -46,51 +62,85 @@
       padding-bottom: 120px;
     }
 
-    &__textbox {
+    &__motyl {
+      width: 42px;
+      height: 42px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 42px;
+
+      @mixin min768px {
+        margin-left: 0;
+      }
+    }
+
+    &__heading {
+      font-size: 48px;
+      line-height: 1.1;
+
+      @mixin min768px {
+        max-width: 320px;
+      }
+
+      @mixin min1200px {
+        max-width: none;
+      }
+    }
+
+    &__text-a {
       grid-column: 1/5;
+      grid-row: 1/2;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
 
       @mixin min600px {
         grid-column: 2/6;
       }
 
       @mixin min768px {
-        grid-column: 2/8;
+        grid-column: 1/5;
+        grid-row: 1/2;
+        text-align: left;
+        padding-right: 32px;
       }
 
       @mixin min1360px {
-        grid-column: 4/8;
-      }
-
-      @mixin min1440px {
-        grid-column: 3/9;
+        grid-column: 2/6;
       }
 
       @mixin min1800px {
-        grid-column: 4/10;
+        grid-column: 3/7;
+      }
+    }
+
+    &__text-b {
+      grid-column: 1/5;
+      grid-row: 2/3;
+      text-align: center;
+
+      @mixin min600px {
+        grid-column: 2/6;
       }
 
-      a.button--motyl {
-        margin-left: auto;
-        margin-right: auto;
-
-        @mixin min1360px {
-          width: 60px;
-          height: 60px;
-        }
+      @mixin min768px {
+        grid-column: 5/9;
+        grid-row: 1/2;
+        align-self: end;
+        text-align: left;
+        padding-left: 32px;
       }
 
-      h1 {
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
+      @mixin min1360px {
+        grid-column: 6/10;
+      }
 
-        @mixin min1440px {
-          max-width: 560px;
-        }
+      @mixin min1800px {
+        grid-column: 7/11;
+      }
+    }
+
+    &__quote {
+      @mixin min1360px {
+        max-width: 320px;
       }
     }
   }

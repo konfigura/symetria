@@ -35,4 +35,10 @@ p {
   @mixin min1440px {
     font-size: 22px;
   }
+
+  q {
+    font-style: italic;
+    font-family: 'LibreCaslonDisplay-Regular', 'Times New Roman', Times, serif;
+    font-size: 28px;
+  }
 }

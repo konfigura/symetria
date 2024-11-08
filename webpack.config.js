@@ -45,6 +45,7 @@ let cssConfig = {
   ]
 };
 
+/*
 let pages = readdirSync('./app').filter(function(file) {
   return file.endsWith('.html')
 }).map(function(page) {
@@ -53,6 +54,30 @@ let pages = readdirSync('./app').filter(function(file) {
     template: `./app/${page}`
   })
 })
+*/
+
+function getHtmlFiles(dir) {
+    let files = [];
+    readdirSync(dir, { withFileTypes: true }).forEach(file => {
+      const fullPath = path.join(dir, file.name);
+      if (file.isDirectory()) {
+        files = [...files, ...getHtmlFiles(fullPath)]; // Recursively include subdirectory files
+      } else if (file.name.endsWith('.html')) {
+        files.push(fullPath);
+      }
+    });
+    return files;
+  }
+  
+let pages = getHtmlFiles('./app').map(pagePath => {
+    const pageName = path.relative('./app', pagePath); // Maintain the folder structure in output
+    return new HtmlWebpackPlugin({
+      filename: pageName,
+      template: pagePath,
+      publicPath: "/"
+    });
+});
+
 
 let config = {
   entry: './app/assets/scripts/App.js',
@@ -68,7 +93,8 @@ if (currentTask == 'dev') {
   cssConfig.use.unshift('style-loader');
   config.output = {
     filename: 'bundled.js',
-    path: path.resolve(__dirname, 'app')
+    path: path.resolve(__dirname, 'app'),
+    publicPath: '/',
   };
   config.devServer = {
     watchFiles: ["app/**/*.html"],
@@ -98,6 +124,7 @@ if (currentTask == 'build') {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'docs'),
+    publicPath: '/', // Ensure CSS paths are absolute for production
     clean: true
   };
   config.mode = 'production';

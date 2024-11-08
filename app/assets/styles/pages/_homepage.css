@@ -181,6 +181,7 @@
 
       @mixin min1360px {
         grid-column: 2/6;
+        padding-right: 60px;
       }
 
       h2 {
@@ -241,7 +242,8 @@
 
   &__offers {
     @mixin min1360px {
-      padding-bottom: 80px;
+      padding-bottom: 120px;
+      padding-top: 120px;
     }
 
     &__flexbox {
@@ -266,7 +268,14 @@
       }
 
       @mixin min1360px {
-        grid-column: 2/10;
+        grid-column: 1/11;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 120px;
+        width: 100vw;
+        margin-left: calc(-1 * (100vw - 1308px) / 2);
+        overflow-x: scroll;
+        padding-left: calc((100vw - 1308px) / 2);
       }
     }
 
@@ -282,6 +291,13 @@
 
       @mixin min1360px {
         width: 504px;
+        flex-shrink: 0;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 0;
+        margin-top: 0;
       }
     }
 
@@ -300,6 +316,13 @@
 
       @mixin min1360px {
         width: 504px;
+        flex-shrink: 0;
+      }
+
+      &:last-of-type {
+        @mixin min1360px {
+          margin-right: 120px;
+        }
       }
 
       &__picture {
@@ -385,11 +408,6 @@
           font-weight: 500;
           margin-top: 12px;
           margin-bottom: 12px;
-
-          @mixin min768px {
-            font-size: 28px;
-            margin-top: 24px;
-          }
         }
 
         p {
@@ -401,7 +419,7 @@
           margin-bottom: 0;
 
           @mixin min768px {
-            font-size: 28px;
+            font-size: 22px;
           }
 
           span {
