@@ -25,15 +25,73 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 50% 100%;
+    }
+
+    &--cyprus {
+      img {
+        object-position: 50% 25%;
+      }
     }
   }
 
   &__textbox {
     padding-top: 36px;
     padding-bottom: 36px;
-    
-    &__container {
+    text-align: center;
+
+    @mixin min1360px {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+
+    h1 {
       grid-column: 1/5;
+
+      @mixin min600px {
+        grid-column: 1/7;
+      }
+
+      @mixin min768px {
+        grid-column: 1/9;
+      }
+
+      @mixin min1360px {
+        grid-column: 3/9;
+      }
+
+      @mixin min1800px {
+        grid-column: 3/11;
+      }
+    }
+
+    p {
+      grid-column: 1/5;
+
+      @mixin min600px {
+        grid-column: 1/7;
+      }
+
+      @mixin min768px {
+        grid-column: 2/8;
+      }
+
+      @mixin min1360px {
+        grid-column: 3/9;
+      }
+
+      @mixin min1800px {
+        grid-column: 4/10;
+      }
+    }
+
+    &__list {
+      grid-column: 1/5;
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
 
       @mixin min600px {
         grid-column: 2/6;
@@ -45,50 +103,17 @@
 
       @mixin min1024px {
         grid-column: 1/9;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
       }
 
       @mixin min1360px {
         grid-column: 1/11;
       }
 
-      h1 {
-        font-size: 54px;
-        line-height: 1.1;
-        text-align: center;
-
-        @mixin min1024px {
-          font-size: 64px;
-          max-width: 720px;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 80px;
-        }
-      }
-
-      p {
-        font-size: 22px;
-        text-align: center;
-
-        @mixin min1024px {
-          margin-bottom: 72px;
-        }
-
-        @mixin min1360px {
-          margin-bottom: 120px;
-        }
-      }
-    }
-
-    &__list {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-
-      @mixin min1024px {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+      @mixin min1800px {
+       grid-column: 2/12;
       }
 
       li {
@@ -126,7 +151,7 @@
 
     @mixin min1360px {
       padding-bottom: 120px;
-      padding-top: 120px;
+      padding-top: 60px;
     }
 
     &__flexbox {

@@ -17,11 +17,7 @@
     }
 
     @mixin min1024px {
-      height: 600px;
-    }
-
-    @mixin min1360px {
-      height: 720px;
+      height: 540px;
     }
 
     img {
@@ -37,30 +33,64 @@
     background-color: $lightGrey;
     position: relative;
 
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: calc(50% - 90px);
+      top: 50%;
+      background-image: url('assets/icons/symetria-motyl.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0.2;
+      z-index: 10;
+    }
+
     @mixin min1024px {
       padding-top: 96px;
       padding-bottom: 96px;
     }
 
-    &::before {
-      content: "";
-      background-image: url('assets/images/geometric_8.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.15;
-      background-blend-mode: multiply;
+    &__heading {
+      grid-column: 1/5;
+      grid-row: 1/2;
+      text-align: center;
+      margin-bottom: 42px;
+
+      @mixin min600px {
+        grid-column: 1/7;
+      }
+
+      @mixin min768px {
+        grid-column: 1/9;
+      }
+
+      @mixin min1360px {
+        grid-column: 2/10;
+      }
+
+      @mixin min1800px {
+        grid-column: 3/11;
+      }
+    }
+
+    &__sub-heading {
+      font-size: 22px;
+      font-family: 'Poppins', Helvetica, Arial, sans-serif;
+      line-height: 1;
+      font-weight: 500;
+
+      @mixin min768px {
+        font-size: 28px;
+      }
     }
 
     &--a {
       text-align: center;
       grid-column: 1/5;
-      grid-row: 1/2;
+      grid-row: 2/3;
 
       @mixin min600px {
         grid-column: 2/6;
@@ -88,7 +118,7 @@
     &--b {
       text-align: center;
       grid-column: 1/5;
-      grid-row: 2/3;
+      grid-row: 3/4;
 
       @mixin min600px {
         grid-column: 2/6;
@@ -100,7 +130,7 @@
 
       @mixin min1024px {
         grid-column: 5/9;
-        grid-row: 1/2;
+        grid-row: 2/3;
         text-align: left;
         align-self: end;
         padding-left: 32px;
@@ -121,11 +151,6 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
-  @mixin min1360px {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-
     &__textbox {
       grid-column: 1 / 5;
       display: flex;
@@ -134,7 +159,7 @@
       text-align: center;
 
       @mixin min600px {
-        grid-column: 2 / 6;
+        grid-column: 1 / 7;
       }
 
       @mixin min768px {
@@ -177,7 +202,7 @@
           position: relative;
           text-align: left;
           width: 100%;
-          height: 68px;
+          height: fit-content;
           font-size: 24px;
           color: $mediumBrown;
           padding: 20px 26px 20px 42px;
@@ -188,12 +213,10 @@
 
           @mixin min540px {
             font-size: 28px;
-            height: 72px;
           }
 
           @mixin min834px {
             font-size: 32px;
-            height: 86px;
             padding: 20px 26px 20px 42px;
             margin-bottom: 36px;
           }
@@ -214,11 +237,15 @@
 
           h3 {
             font-family: 'Poppins', Helvetica, Arial, sans-serif;
-            font-size: 24px;
+            font-size: 18px;
             display: inline;
 
             @mixin min540px {
-              font-size: 30px;
+              font-size: 24px;
+            }
+
+            @mixin min768px {
+              font-size: 24px;
             }
           }
 
@@ -246,19 +273,9 @@
     }
   }
 
-  &__icons {
+  &__icons-title {
     padding-top: 60px;
-    padding-bottom: 60px;
-
-    @mixin min600px {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    @mixin min1440px {
-      padding-top: 120px;
-      padding-bottom: 120px;
-    }
+    background-color: $lightGrey;
 
     &__textbox {
       text-align: center;
@@ -282,8 +299,24 @@
       }
 
       p {
+        margin-top: 60px;
         font-size: 24px;
       }
+    }
+  }
+
+  &__icons {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @mixin min600px {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @mixin min1440px {
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
 
     &__list {

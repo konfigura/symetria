@@ -18,11 +18,7 @@
     }
 
     @mixin min1024px {
-      height: 600px;
-    }
-
-    @mixin min1360px {
-      height: 720px;
+      height: 540px;
     }
 
     img {
