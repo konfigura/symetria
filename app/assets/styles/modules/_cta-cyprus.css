@@ -4,6 +4,10 @@
     background-color: $lightGrey;
   }
 
+  &--beige {
+    background-color: #f8e8da;
+  }
+
   &__textbox {
     grid-column: 1/5;
     grid-row: 1/2;

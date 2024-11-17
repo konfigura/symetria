@@ -290,6 +290,15 @@
       padding-top: 120px;
     }
 
+    &__heading {
+      font-size: 36px;
+      line-height: 1.2;
+
+      @mixin min1440px {
+        font-size: 46px;
+      }
+    }
+
     &__flexbox {
       grid-column: 1/5;
       display: flex;

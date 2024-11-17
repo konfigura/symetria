@@ -33,21 +33,6 @@
     background-color: $lightGrey;
     position: relative;
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      left: calc(50% - 90px);
-      top: 50%;
-      background-image: url('assets/icons/symetria-motyl.svg');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      opacity: 0.2;
-      z-index: 10;
-    }
-
     @mixin min1024px {
       padding-top: 96px;
       padding-bottom: 96px;
@@ -85,6 +70,10 @@
       @mixin min768px {
         font-size: 28px;
       }
+
+      @mixin min1024px {
+        text-align: center;
+      }
     }
 
     &--a {
@@ -101,7 +90,7 @@
       }
 
       @mixin min1024px {
-        text-align: left;
+        text-align: justify;
         grid-column: 1/5;
         padding-right: 32px;
       }
@@ -131,7 +120,7 @@
       @mixin min1024px {
         grid-column: 5/9;
         grid-row: 2/3;
-        text-align: left;
+        text-align: justify;
         align-self: end;
         padding-left: 32px;
       }
@@ -150,6 +139,10 @@
   background-color: $lightGrey;
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @mixin min1024px {
+    padding-top: 120px;
+  }
 
     &__textbox {
       grid-column: 1 / 5;

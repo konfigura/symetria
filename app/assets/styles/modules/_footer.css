@@ -188,6 +188,10 @@
       gap: 12px;
     }
 
+    &__settings {
+      margin-top: 32px;
+    }
+
     &__back-to-top {
       button {
         padding-left: 0;
