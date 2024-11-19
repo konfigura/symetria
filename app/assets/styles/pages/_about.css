@@ -119,6 +119,7 @@
           margin-left: auto;
           margin-right: auto;
           margin-top: 48px;
+          opacity: .25;
         }
         
       }
@@ -155,6 +156,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 64px;
+        opacity: .25;
       }
     }
 

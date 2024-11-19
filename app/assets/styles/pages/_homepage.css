@@ -137,10 +137,8 @@
   }
 
   &__quote {
-    background-color: $lightGrey;
     text-align: center;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-bottom: 60px;
 
     p {
       grid-column: 1/5;
@@ -291,12 +289,36 @@
     }
 
     &__heading {
-      font-size: 36px;
+      font-size: 54px;
       line-height: 1.2;
 
-      @mixin min1440px {
-        font-size: 46px;
+      @mixin min768px {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
+
+      @mixin min1024px {
+        font-size: 64px;
+        line-height: 1.1;
+      }
+
+      @mixin min1360px {
+        font-size: 80px;
+      }
+    }
+
+    p {
+      @mixin min768px {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .button {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &__flexbox {
@@ -367,11 +389,6 @@
 
       @mixin min1800px {
         grid-column: 4/10;
-      }
-
-      p {
-        margin-bottom: 0;
-        margin-top: 0;
       }
 
       .button {
