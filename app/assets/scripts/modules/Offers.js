@@ -3,7 +3,7 @@ import FetchWrapper from "./FetchWrapper";
 const API = new FetchWrapper("../../assets/offers.json");
 const offersContainer = document.querySelector("div#offers-container");
 
-offersContainer.innerHTML = "";
+offersContainer?.innerHTML = "";
 
 export const fetchedOffers = () => API.get("").then(data => {
   data.forEach(offer => {

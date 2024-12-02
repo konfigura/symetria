@@ -13,4 +13,7 @@ let modal = new Modal();
 let menu = new Menu();
 let header = new Header();
 // let print = new Print();
-fetchedOffers();
+if (window.location.pathname === "/oferty.html") {
+  fetchedOffers();
+}
+  
